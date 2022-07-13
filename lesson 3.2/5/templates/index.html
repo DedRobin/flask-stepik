@@ -8,14 +8,7 @@
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
 <body>
-{% for k, v in numbers.items() %}
-{% if k.isdigit() %}
-{% if k|int <= v %}
-{{ k|int }}
-{% else %}
-{{ v }}
-{% endif %}
-{% endif %}
-{% endfor %}
+{% from "macros.html" import post_email %}
+{{ post_email(email, message, title=title) }}
 </body>
 </html>
