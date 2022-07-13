@@ -8,10 +8,10 @@ def index():
     return "Flask-steppik"
 
 
-@app.route('/<a>/<sign>/<b>/')
-def arithmetic_operation(a, b, sign):
-    print(a, sign, b)
-    return render_template('index.html', a=a, b=b, sign=sign)
+@app.route('/<a>/<b>/<c>/')
+def loop(a, b, c):
+    some_list = [a, b, c]
+    return render_template('index.html', numbers=some_list)
 
 
 if __name__ == '__main__':

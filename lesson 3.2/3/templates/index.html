@@ -7,18 +7,13 @@
     <title>Flask-test</title>
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
-<body>{% if sign == "+" %}
-{{ a|float + b|float }}
-{% elif sign == "-" %}
-{{ a|float - b|float }}
-{% elif sign == "*" %}
-{{ a|float * b|float }}
-{% elif sign == ":" and b|float != 0 %}
-{{ a|float / b|float }}
-{% elif sign == "**" %}
-{{ a|float ** b|float }}
+<body>
+{% if numbers %}
+{% for num in numbers %}
+{{ loop.index }} - {{ num }}
+{% endfor %}
 {% else %}
-Ошибка
+Численная последовательность не существует
 {% endif %}
 </body>
 </html>
