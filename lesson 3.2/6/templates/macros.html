@@ -1,0 +1,15 @@
+{% macro post_email(email, message, title="Без темы") %}
+    {% if "@" not in email %}
+        E-mail '{{ email }}' некорректный
+    {% else %}
+        Сообщение '{{ message }}' для адресата '{{ email }}' отправлено с темой '{{ title }}'
+    {% endif %}
+{% endmacro %}
+
+{% macro get_solution()%}
+    {% for i in range(varargs|length|int, 0, -1) %}
+        {% if kwargs.get(varargs[:i]|sum|string) %}
+            {{ kwargs.get(varargs[:i]|sum|string) }}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}

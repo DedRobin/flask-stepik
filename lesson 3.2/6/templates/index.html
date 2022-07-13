@@ -8,10 +8,7 @@
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
 <body>
-<p class="class1">Hello class 1</p>
-<p class="class2">Hello class 2</p>
+{% from "macros.html" import get_solution %}
+{{ get_solution(*varargs, **kwargs) }}
 </body>
 </html>
-<!--<script>-->
-<!--    alert("Hello! This is test-page for Flask-API")-->
-<!--</script>-->
