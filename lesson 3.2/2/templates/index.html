@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask-test</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>{% if sign == "+" %}
+{{ a|float + b|float }}
+{% elif sign == "-" %}
+{{ a|float - b|float }}
+{% elif sign == "*" %}
+{{ a|float * b|float }}
+{% elif sign == ":" and b|float != 0 %}
+{{ a|float / b|float }}
+{% elif sign == "**" %}
+{{ a|float ** b|float }}
+{% else %}
+Ошибка
+{% endif %}
+</body>
+</html>
