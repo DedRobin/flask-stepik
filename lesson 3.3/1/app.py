@@ -10,8 +10,8 @@ def index():
 
 @app.route('/test/')
 def test():
-    return render_template('index.html', varargs=[1, 10, 100, 1000, 10000, ],
-                           kwargs={'11111': 'm', '10': 'o', 'test': 'r', '111': 'i', '666': 'e', })
+    return render_template("index.html")
+
 
 if __name__ == '__main__':
     app.run()
