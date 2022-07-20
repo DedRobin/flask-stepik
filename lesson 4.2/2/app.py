@@ -1,16 +1,16 @@
 from flask import Flask, render_template, request
-from form import MessageForm
-from config import Config
+from form import ProfileForm
 
 app = Flask(__name__)
-app.config.from_object(Config)
 
 app.secret_key = 'boobs'
 
 
-@app.route('/', methods=["GET"])
+@app.route('/', methods=["GET", "POST"])
 def index():
-    form = MessageForm()
+    if request.method == "POST":
+        return "<h1>Data is recorded!</h1>"
+    form = ProfileForm()
     return render_template("index.html", form=form)
 
 
